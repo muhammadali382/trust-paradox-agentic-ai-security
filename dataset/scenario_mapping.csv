@@ -1,0 +1,5 @@
+Scenario_ID,Step_Number,Step_Label,Step_Description,Source_Paper,TrustParadox_Layer,Mitigation_Notes
+DS1_S1,1,Initial Access via User Prompt,"Attacker gets an agent to process a crafted, malicious request.",,,
+DS1_S2,2,Prompt/Context Manipulation,"Attacker manipulates intermediate context or instructions to steer the agent.",,,
+DS1_S3,3,Tool Invocation Abuse,"Agent calls tools in a way that benefits the attacker (e.g., data access, external calls).",,,
+DS1_S4,4,Data Exfiltration or Impact,"Sensitive data is exfiltrated or critical actions are taken as a result of the chain.",,,
