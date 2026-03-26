@@ -1,0 +1,10 @@
+Gap_ID,Gap_Name,Severity_Score_0_1,Rationale
+G1,Synthetic Environments,,
+G2,RAG Trigger Optimization,,
+G3,Missing End-to-End Defense,,
+G4,Weak System Prompts,,
+G5,Ignored Multimodal/Tool-Heavy Agents,,
+G6,No Large-Scale Multi-Agent Architectures,,
+G7,Unexplained Inter-Agent Trust,,
+G8,Pure Black-Box Evaluation,,
+G9,No Real-World Incident Mapping,,
