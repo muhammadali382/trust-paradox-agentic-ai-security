@@ -1,2 +1,8 @@
-Attack_Vector,Incident_Share_Percent,Source,Note
-Prompt_Injection,35.3,"Adversa AI - Top AI Security Incidents 2025","Prompt-based exploits account for 35.3% of all documented AI incidents."
+Vector,Percent_of_Incidents,Source,Notes
+Prompt injection (all prompt-based exploits),35.3,"Adversa AI - Top AI Security Incidents 2025","Prompt-based exploits account for 35.3% of all documented AI incidents in the Adversa 2025 incident dataset."
+Incidents involving Generative AI,70.6,"Adversa AI - Top AI Security Incidents 2025","70.6% of known AI security incidents in the report involved Generative AI systems; the most dangerous cases were agentic systems with real-world actions."
+Prompt injection (subset in breach report),17,"IBM 2025 breach analysis via Vorlon summary","Prompt injection listed as 17% of AI security incidents in IBM's 2025 breach report breakdown."
+Supply chain compromise (apps/APIs/plugins),30,"IBM 2025 breach analysis via Vorlon summary","Supply chain compromise (via compromised apps, APIs, or plugins) is 30% of AI-related security incidents."
+Model inversion,24,"IBM 2025 breach analysis via Vorlon summary","Model inversion attacks account for 24% of AI security incidents in this dataset."
+Model evasion,21,"IBM 2025 breach analysis via Vorlon summary","Model evasion attacks account for 21% of incidents."
+Data poisoning,15,"IBM 2025 breach analysis via Vorlon summary","Data poisoning makes up 15% of AI security incidents in the same distribution."
