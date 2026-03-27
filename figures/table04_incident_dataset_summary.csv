@@ -1,0 +1,9 @@
+source,time_range,incident_count,primary_vectors,notes
+OWASP Top 10 for LLM Applications (2023–2025),2023–2025,43+,"Prompt Injection (LLM01), Insecure Output Handling (LLM02), Training Data Poisoning (LLM03)",Community-curated vulnerability catalog; most cited LLM threat reference
+MITRE ATLAS — Adversarial ML Threat Matrix (2024),2020–2024,58+,"Model Inversion, Prompt Injection, Supply Chain Poisoning, RAG Manipulation",Structured ATT&CK-style taxonomy; covers agentic and multi-model systems
+AI Incident Database — AIID (2024 Annual Report),2016–2024,700+,"Misinformation, Bias, Harmful Output, Autonomous Decision Failures",Broadest real-world coverage; includes non-security but operationally relevant incidents
+Gartner Emerging Risks Monitor — AI Agents (Q3 2024),2023–2024,31,"Agentic Misuse, Privilege Escalation, Shadow AI, Unauthorized Tool Calls",Enterprise survey; 67% of firms report agentic incidents within 12 months of deployment
+Google DeepMind — Frontier Safety Framework Incidents (2024),2023–2024,12,"Jailbreak, Instruction Override, Multi-step Attack Chains",Frontier model focus; includes early multi-agent chain attack observations
+ENISA Threat Landscape for AI (2024),2021–2024,89,"Data Poisoning, Backdoor, Model Theft, Supply Chain, RAG Manipulation",EU agency report; strong coverage of RAG and supply chain vectors
+"Dark Side Paper — Benchmark Results (Paper 1, 2025)",2025,18 LLMs,"Direct Prompt Injection, RAG Backdoor, Inter-Agent Trust Exploitation","Primary benchmark source; 94.4% DPI, 83.3% RBA, 100% IATE vulnerability rates"
+"LAMPS Paper — PyPI Malware Dataset (Paper 2, 2026)",2024–2026,"15,996 packages",Supply Chain / Malicious Package Injection,"D1=7,910 packages, D2=8,086 packages; multi-agent detection benchmark"

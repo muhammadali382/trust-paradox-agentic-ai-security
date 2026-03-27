@@ -1,0 +1,28 @@
+scenario_id,scenario_name,attack_step,actor,l1_action,l2_action,l3_action,notes
+S1,Direct Prompt Injection (DPI),Step 1: Attacker crafts malicious user prompt,External,—,—,—,No mitigation yet — input raw
+S1,Direct Prompt Injection (DPI),Step 2: Prompt enters L1 pipeline,L1-A Input Guard,DETECT,—,—,Injection detection: regex + ML classifier
+S1,Direct Prompt Injection (DPI),Step 3: Prompt partitioned into zones,L1-B Input Guard,ISOLATE,—,—,System/user/data fenced with <<< >>> delimiters
+S1,Direct Prompt Injection (DPI),Step 4: Segments labeled by trust level,L1-C Input Guard,LABEL,—,—,User input tagged UNTRUSTED (Level 1)
+S1,Direct Prompt Injection (DPI),Step 5: Disallowed commands blocked,L1-D Input Guard,BLOCK,—,—,Allowlist enforcement — request dropped & logged
+S1,Direct Prompt Injection (DPI),Step 6: Remaining input sanitized,L1-E Input Guard,SANITIZE,—,—,"Escape chars, strip Unicode, truncate tokens"
+S1,Direct Prompt Injection (DPI),Step 7: Hardened prompt passed to LLM,— (pass),PASS,—,—,"Injection-free, trust-labeled prompt delivered"
+S1,Direct Prompt Injection (DPI),Step 8: Tool call scope enforced,—,—,ENFORCE,—,L2 limits tool calls to allowlisted set only
+S1,Direct Prompt Injection (DPI),Step 9: All actions logged,—,—,LOG,—,Full audit trail sent to SIEM
+S2,RAG Backdoor Attack (RBA),Step 1: Attacker poisons document in vector store,External,—,—,—,Malicious instruction hidden in RAG corpus
+S2,RAG Backdoor Attack (RBA),Step 2: Legitimate user submits benign query,External,—,—,—,No visible attack signal from user side
+S2,RAG Backdoor Attack (RBA),Step 3: RAG retrieves poisoned chunk,RAG System,—,—,—,Poisoned content enters pipeline as context
+S2,RAG Backdoor Attack (RBA),Step 4: Retrieved content scanned at L1-A,L1-A Input Guard,DETECT,—,—,Injection pattern in RAG chunk detected
+S2,RAG Backdoor Attack (RBA),Step 5: RAG segment isolated from user prompt,L1-B Input Guard,ISOLATE,—,—,Partitioning separates user intent from RAG data
+S2,RAG Backdox Attack (RBA),Step 6: RAG context labeled EXTERNAL,L1-C Input Guard,LABEL,—,—,Trust level 0 assigned to unverified documents
+S2,RAG Backdoor Attack (RBA),Step 7: Allowlist check blocks embedded cmds,L1-D Input Guard,BLOCK,—,—,Embedded exec commands denied — logged to SIEM
+S2,RAG Backdoor Attack (RBA),Step 8: L2 sandbox contains execution,—,—,SANDBOX,—,"Even if passed, execution fully sandboxed"
+S2,RAG Backdoor Attack (RBA),Step 9: Action logging flags anomaly,—,—,LOG,—,Unusual tool call pattern recorded for review
+S3,Inter-Agent Trust Exploitation (IATE),Step 1: Attacker compromises Specialist Agent A,Internal Agent,—,—,—,Agent A injected via earlier DPI or supply chain
+S3,Inter-Agent Trust Exploitation (IATE),Step 2: Agent A sends malicious msg to Agent B,Inter-Agent Channel,—,—,—,Peer-to-peer message without signed token
+S3,Inter-Agent Trust Exploitation (IATE),Step 3: L3 verifies message signature,—,—,—,VERIFY,T2-signed token required — unsigned msg blocked
+S3,Inter-Agent Trust Exploitation (IATE),Step 4: Trust token cryptographic check,—,—,—,CRYPTO,Agent ID verified against registry — fail = block
+S3,Inter-Agent Trust Exploitation (IATE),Step 5: Boundary enforcement limits scope,—,—,—,BOUNDARY,Agent A cannot delegate beyond its assigned role
+S3,Inter-Agent Trust Exploitation (IATE),Step 6: Privilege escalation attempt blocked,—,—,—,BLOCK,Level 2 agent cannot claim Level 3 privileges
+S3,Inter-Agent Trust Exploitation (IATE),Step 7: L2 action logging records all msgs,—,—,LOG,—,All inter-agent comms logged with timestamps
+S3,Inter-Agent Trust Exploitation (IATE),Step 8: Kill-switch triggered if anomaly,—,—,KILL,—,Orchestrator halts agent pipeline on breach
+S3,Inter-Agent Trust Exploitation (IATE),Step 9: Incident reported to SIEM,—,—,ALERT,ALERT,Full chain reconstructed in security log
