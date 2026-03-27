@@ -1,0 +1,8 @@
+Vector,Percent_of_Incidents
+Incidents involving Generative AI,70.6
+Prompt injection (all prompt-based exploits),35.3
+Supply chain compromise (apps/APIs/plugins),30.0
+Model inversion,24.0
+Model evasion,21.0
+Prompt injection (subset in breach report),17.0
+Data poisoning,15.0

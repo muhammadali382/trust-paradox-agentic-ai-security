@@ -1,2 +1,3 @@
-Year,Percent_Orgs_Using_Agentic_AI,Percent_Orgs_With_Agentic_AI_Security_Controls,Source,Note
-2025,NA,21,"Akto - 2025 State of Agentic AI Security","Report states only 21% of organizations have agentic-AI security controls."
+Year,Percent_Orgs_Using_Agentic_AI,Percent_Orgs_With_Agentic_AI_Security_Controls,Source,Note,IncidentIndex
+2024,20,21,Synthetic baseline (pre-report),Approximate pre-agentic baseline for visualization only.,1
+2025,38.6,21,Akto - 2025 State of Agentic AI Security,"Report finds 38.6% of enterprises run AI agents at scale, but only 21% have visibility and controls.",2
